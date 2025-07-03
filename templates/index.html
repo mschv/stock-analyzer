@@ -14,7 +14,21 @@
 
   {% if symbol %}
     <h2>Analysis for: {{ symbol }}</h2>
-    <!-- Chart/Results will go here -->
+
+    <!-- Performance Metrics -->
+    <div class="metrics">
+      <h3>Performance Summary</h3>
+      <ul>
+        <li><strong>Cumulative Return:</strong> {{ cumulative }}%</li>
+        <li><strong>Annualized Volatility:</strong> {{ volatility }}%</li>
+        <li><strong>Sharpe Ratio:</strong> {{ sharpe }}</li>
+      </ul>
+    </div>
+
+    <!-- Charts -->
+    <div>{{ charts['price'] | safe }}</div>
+    <div>{{ charts['rsi'] | safe }}</div>
+    <div>{{ charts['macd'] | safe }}</div>
   {% endif %}
 </body>
 </html>
